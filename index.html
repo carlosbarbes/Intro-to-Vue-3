@@ -21,12 +21,12 @@
             <img :src="image">
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
             <p>{{ description }}</p>
             <div
-              v-for="variant in variants"
+              v-for="(variant, index) in variants"
               :key="variant.id"
-              @mouseover="updateImage(variant.image)"
+              @mouseover="updateVar(index)"
               class="color-circle"
               :style="{ backgroundColor: variant.color }">
             </div>
